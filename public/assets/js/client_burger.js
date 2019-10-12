@@ -19,7 +19,25 @@ $(document).ready(function() {
         });
     });
 
+    // Event handler that will fire when user submits a new burger
+    $(".create-form").on("submit", function(event) {
+        // Prevent default page reload when form is submitted
+        event.preventDefault();
 
+        // Create new burger object to send to server
+        var newBurger = {
+            name: $("#add-burger").val().trim()
+        };
+
+        // Send new burger object via a POST request
+        $.ajax("/api/burgers", {
+            type: "POST",
+            data: newBurger
+        }). then(function(){
+            // Reload page to show new burger
+            location.reload();
+        });
+    });
 
 
 

@@ -36,7 +36,16 @@ router.put("/api/burgers/:id", function(req, res) {
                 res.status(200).end();
             }
         });
-})
+});
+
+// POST route that will add a new burger to the db
+router.post("/api/burgers", function(req, res) {
+    // Call insertOne model method to send new burger to db
+    burger.insertOne("burger_name", req.body.name, function(result) {
+        // Send id of new burger as json response to client
+        res.json({id: result.insertId})
+    });
+});
 
 // Export this router instance so it can be accessed by server
 module.exports = router;

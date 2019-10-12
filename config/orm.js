@@ -23,9 +23,17 @@ var orm = {
         });
     },
 
-    insertOne: function() {
+    // Method to add a burger to the db
+    insertOne: function(tableName, col, val, cb) {
+        // Template to build INSERT db query
+        var queryString = `INSERT INTO ${tableName} (${col}) VALUES ("${val}")`;
+        console.log(queryString);
+        
+        connection.query(queryString, function(err, result) {
+            if(err) throw err;
 
-
+            cb(result);
+        });
     },
 
     updateOne: function(tableName, objColVal, condition, cb) {

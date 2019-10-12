@@ -1,17 +1,19 @@
 var orm = require("../config/orm");
 
 var burger = {
+    // Method to pull all burgers from db using ORM
     selectAll: function(cb) {
         orm.selectAll("burgers", function(res) {
             cb(res);
         });
     },
-
-    insertOne: function() {
-
-
+    // Method to add a burger to db using ORM
+    insertOne: function(col, val, cb) {
+        orm.insertOne("burgers", col, val, function(res) {
+            cb(res);
+        });
     },
-
+    // Method to changed 'devoured' state of burger in db using ORM
     updateOne: function(objColVal, condition, cb) {
         orm.updateOne("burgers", objColVal, condition, function(res) {
             cb(res);
