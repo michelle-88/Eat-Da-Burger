@@ -45,7 +45,6 @@ var orm = {
             cb(result);
         });
     }
-
 };
 
 // Export orm object so it can be accessed by the model

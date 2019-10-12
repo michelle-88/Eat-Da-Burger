@@ -17,7 +17,6 @@ router.get("/", function(req, res) {
 });
 
 // PUT route that will update burger's 'devoured' state in db
-
 router.put("/api/burgers/:id", function(req, res) {
     // Id of burger that was clicked will be provided in the req parameters
     var condition = `id=${req.params.id}`;

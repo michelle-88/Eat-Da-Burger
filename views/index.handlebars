@@ -1,6 +1,5 @@
-<h1>Welcome to Good Burger!</h1>
-
-<div class="container">
+<div class="container pt-3">
+    <h1 id="main-title" class="title text-center pb-3">Welcome to the MVC Diner!</h1>
     <div class="row">
 
     {{!-- Column for uneaten burgers --}}
@@ -29,7 +28,7 @@
 
 <div class="container mt-5">
 
-<h2 class="text-center mb-3">Order a Burger!</h2>
+<h2 id="sub-title" class="text-center pt-3">Order a Burger!</h2>
 
 <div class="row justify-content-center">
     
@@ -39,7 +38,7 @@
         <div class="form-group">
             <label for="add-burger">Type of Burger:</label>
             <textarea class="form-control rounded-5 mb-2" id="add-burger" rows="3"></textarea>
-            <button type="submit">Order Burger</button>
+            <button class="btn btn-cyan btn-sm" type="submit"><i class="fas fa-hamburger fa-lg mr-2"></i>Order Burger</button>
         </div>
     </form>
     </div>
