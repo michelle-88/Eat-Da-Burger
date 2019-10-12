@@ -1,0 +1,32 @@
+<h1>Welcome to Good Burger!</h1>
+
+<div class="container">
+    <div class="row">
+        
+    {{!-- Column for uneaten burgers --}}
+    <div class="col">
+        <ul>
+            {{#each burgers}}
+                {{#unless devoured}}
+                    <li>{{burger_name}}</li>
+                {{/unless}}
+            {{/each}}
+        </ul>
+    </div>
+    
+    {{!-- Column for eaten burgers --}}
+    <div class="col">
+        <ul>
+            {{#each burgers}}
+                {{#if devoured}}
+                    <li>{{burger_name}}</li>
+                {{/if}}
+            {{/each}}
+        </ul>
+    </div>
+    </div>
+</div>
+
+<h2>Order a Burger!</h2>
+
+<form action=""></form>
