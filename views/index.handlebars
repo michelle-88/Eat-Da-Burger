@@ -2,13 +2,13 @@
 
 <div class="container">
     <div class="row">
-        
+
     {{!-- Column for uneaten burgers --}}
     <div class="col">
         <ul>
             {{#each burgers}}
                 {{#unless devoured}}
-                    <li>{{burger_name}}</li>
+                    {{> burgers/burger-item devoured=true}}
                 {{/unless}}
             {{/each}}
         </ul>
@@ -19,7 +19,7 @@
         <ul>
             {{#each burgers}}
                 {{#if devoured}}
-                    <li>{{burger_name}}</li>
+                    {{> burgers/burger-item devoured=false}}
                 {{/if}}
             {{/each}}
         </ul>
@@ -27,6 +27,7 @@
     </div>
 </div>
 
+{{!-- Form to add new burger --}}
 <h2>Order a Burger!</h2>
 
 <form action=""></form>

@@ -12,12 +12,11 @@ var burger = {
 
     },
 
-    updateOne: function() {
-
-
-
+    updateOne: function(objColVal, condition, cb) {
+        orm.updateOne("burgers", objColVal, condition, function(res) {
+            cb(res);
+        });
     }
-
 };
 
 // Export burger object so its methods can be used by the controller
