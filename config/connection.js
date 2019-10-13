@@ -2,6 +2,8 @@
 var mysql = require("mysql");
 var connection;
 
+// If the app is deployed (i.e. server has a JawsDB environmental variable), connect to the JawsDB database
+// Else, connect to the locally hosted db
 if(process.env.JAWSDB_URL) {
     connection = mysql.createConnection(process.env.JAWSDB_URL);
 } else {
@@ -13,8 +15,6 @@ if(process.env.JAWSDB_URL) {
     database: "burgers_db"
     });
 };
-
-
 
 // Make connection to database
 connection.connect(function(err) {

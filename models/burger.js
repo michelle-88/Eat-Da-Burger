@@ -1,3 +1,4 @@
+// Require ORM so model can utilize its methods
 var orm = require("../config/orm");
 
 var burger = {
@@ -13,7 +14,7 @@ var burger = {
             cb(res);
         });
     },
-    // Method to changed 'devoured' state of burger in db using ORM
+    // Method to change 'devoured' state of burger in db using ORM
     updateOne: function(objColVal, condition, cb) {
         orm.updateOne("burgers", objColVal, condition, function(res) {
             cb(res);

@@ -1,3 +1,4 @@
+// Dependency for express module and setting up express app
 var express = require("express");
 
 var PORT = process.env.PORT || 8080;
@@ -9,6 +10,7 @@ app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+// Require handlebars module and enable express app to use handlebars as the view engine
 var exphbs = require("express-handlebars");
 
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
